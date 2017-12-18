@@ -76,24 +76,27 @@ $(document).ready(function() {
 	
 	/*
 	function to keep track of roundScoreCounter and check roundScoreCounter to see if round won
-		if (roundScoreCounter === roundScoreGoal) {
-			winsCounter++;
-			$("#winsCounterDisplay").text("Wins: " + winsCounter);
-		}
-		else if (roundScoreCounter > roundScoreGoal) {
-			lossesCounter++;
-			$("#lossesCounterDisplay").text("Losses: " + lossesCounter);
-		}
-
 	*/
 
 	$(".crystalImage").on("click", function crystalClickActions() {
 		var crystalPoints = ($(this).attr("crystalPointsValue"));
 		console.log(crystalPoints);
+
 		crystalPoints = parseInt(crystalPoints);
+
 		roundScoreCounter += crystalPoints;
 		console.log(roundScoreCounter);
 		$("#roundScoreCounterDisplay").text(roundScoreCounter);
+
+		if(roundScoreCounter === roundScoreGoal) {
+			winsCounter++;
+			$("#winsCounterDisplay").text("Wins: " + winsCounter);
+		}
+		else if(roundScoreCounter > roundScoreGoal) {
+			lossesCounter++;
+			$("#lossesCounterDisplay").text("Losses: " + lossesCounter);
+		}
+
 	});
 	
 });
