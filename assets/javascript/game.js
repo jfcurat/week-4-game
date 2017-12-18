@@ -10,6 +10,8 @@ $(document).ready(function() {
 	var yellowCrystalValue = 0;
 	var greenCrystalValue = 0;
 
+	var roundOver = false;
+
 	/* things needed?
 
 	function to clear roundScoreCounter/$("#roundScoreCounterDisplay"). and start new round
@@ -18,14 +20,13 @@ $(document).ready(function() {
 				after clearing stuff
 	*/
 
-	/*
-	function to reset state @ beginning of round
-	function roundReset() {
+	
+	//function to reset state @ beginning of round
+	function initializeRound() {
 		roundScoreGoal = 0;
-		
+		roundScoreCounter = 0;
+		roundOver = false;
 	}
-	*/
-
 	
 	//function to use Math.random() to pick number between 19-120 for roundScoreGoal
 	function getRandomScoreGoal(min, max) {
@@ -91,10 +92,16 @@ $(document).ready(function() {
 		if(roundScoreCounter === roundScoreGoal) {
 			winsCounter++;
 			$("#winsCounterDisplay").text("Wins: " + winsCounter);
+			roundOver = true;
 		}
 		else if(roundScoreCounter > roundScoreGoal) {
 			lossesCounter++;
 			$("#lossesCounterDisplay").text("Losses: " + lossesCounter);
+			roundOver= true;
+		}
+
+		if(roundOver = true) {
+			initializeRound();
 		}
 
 	});
