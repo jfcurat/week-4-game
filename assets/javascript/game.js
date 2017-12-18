@@ -17,16 +17,22 @@ $(document).ready(function() {
 			maybe just call other functions that deal with crystalValue assignment and roundScoreGoal assignment
 				after clearing stuff
 	*/
-	//function roundStarter() {
-	//	roundScoreGoal = 
-	//}
+
+	/*
+	function to reset state @ beginning of round
+	function roundReset() {
+		roundScoreGoal = 0;
+		
+	}
+	*/
 
 	
 	//function to use Math.random() to pick number between 19-120 for roundScoreGoal
 	function getRandomScoreGoal(min, max) {
 		min = Math.ceil(19);
 		max = Math.floor(120);
-		return Math.floor(Math.random() *  (max - min + 1)) + min; //max inclusive and min inclusive
+		roundScoreGoal = Math.floor(Math.random() *  (max - min + 1)) + min; //max inclusive and min inclusive
+		return roundScoreGoal;
 	}
 	console.log(getRandomScoreGoal());
 
@@ -34,34 +40,37 @@ $(document).ready(function() {
 	function getRandomRedCrystalValue(min, max) {
 		min = Math.ceil(1);
 		max = Math.floor(12);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		redCrystalValue = Math.floor(Math.random() * (max - min + 1)) + min;
+		return redCrystalValue;
 	}
 	console.log(getRandomRedCrystalValue());
 
 	function getRandomBlueCrystalValue(min, max) {
 		min = Math.ceil(1);
 		max = Math.floor(12);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		blueCrystalValue = Math.floor(Math.random() * (max - min + 1)) + min;
+		return blueCrystalValue;
 	}
 	console.log(getRandomBlueCrystalValue());
-	
+
 	function getRandomYellowCrystalValue(min, max) {
 		min = Math.ceil(1);
 		max = Math.floor(12);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		yellowCrystalValue = Math.floor(Math.random() * (max - min + 1)) + min;
+		return yellowCrystalValue;
 	}
 	console.log(getRandomYellowCrystalValue());
 
 	function getRandomGreenCrystalValue(min, max) {
 		min = Math.ceil(1);
 		max = Math.floor(12);
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		greenCrystalValue = Math.floor(Math.random() * (max - min + 1)) + min;
+		return greenCrystalValue;
 	}
 	console.log(getRandomGreenCrystalValue());
-	//function to 
-
+	
 	/*
-	function to keep track of roundScoreCounter and check
+	function to keep track of roundScoreCounter and check roundScoreCounter to see if round won
 		if (roundScoreCounter === roundScoreGoal) {
 			winsCounter++;
 			$("#winsCounterDisplay").text(winsCounter)
@@ -71,11 +80,6 @@ $(document).ready(function() {
 			$("#lossesCounterDisplay").text(lossesCounter)
 		}
 
-	function to 
-
 	*/
 
-	//function() {
-	//
-	//}
 });
