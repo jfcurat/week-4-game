@@ -87,4 +87,9 @@ $(document).ready(function() {
 
 	*/
 
+	/*
+	$(".crystalImage").on("click", function crystalClickActions() {
+		
+	}
+	*/
 });
