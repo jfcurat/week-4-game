@@ -35,7 +35,6 @@ $(document).ready(function() {
 		return roundScoreGoal;
 	}
 	console.log(getRandomScoreGoal());
-
 	$("#roundScoreGoalDisplay").text("Score Goal: " + roundScoreGoal);
 
 	//functions to use Math.random() to pick numbers between 1-12 for red/blue/yellow/greenCrystalValue
@@ -46,6 +45,7 @@ $(document).ready(function() {
 		return redCrystalValue;
 	}
 	console.log(getRandomRedCrystalValue());
+	$("#redCrystalImage").attr("crystalPointsValue", redCrystalValue);
 
 	function getRandomBlueCrystalValue(min, max) {
 		min = Math.ceil(1);
@@ -54,6 +54,7 @@ $(document).ready(function() {
 		return blueCrystalValue;
 	}
 	console.log(getRandomBlueCrystalValue());
+	$("#blueCrystalImage").attr("crystalPointsValue", blueCrystalValue);
 
 	function getRandomYellowCrystalValue(min, max) {
 		min = Math.ceil(1);
@@ -62,6 +63,7 @@ $(document).ready(function() {
 		return yellowCrystalValue;
 	}
 	console.log(getRandomYellowCrystalValue());
+	$("#yellowCrystalImage").attr("crystalPointsValue", yellowCrystalValue);
 
 	function getRandomGreenCrystalValue(min, max) {
 		min = Math.ceil(1);
@@ -70,16 +72,17 @@ $(document).ready(function() {
 		return greenCrystalValue;
 	}
 	console.log(getRandomGreenCrystalValue());
+	$("#greenCrystalImage").attr("crystalPointsValue", greenCrystalValue);
 	
 	/*
 	function to keep track of roundScoreCounter and check roundScoreCounter to see if round won
 		if (roundScoreCounter === roundScoreGoal) {
 			winsCounter++;
-			$("#winsCounterDisplay").text(winsCounter)
+			$("#winsCounterDisplay").text("Wins: " + winsCounter);
 		}
 		else if (roundScoreCounter > roundScoreGoal) {
 			lossesCounter++;
-			$("#lossesCounterDisplay").text(lossesCounter)
+			$("#lossesCounterDisplay").text("Losses: " + lossesCounter);
 		}
 
 	*/
