@@ -10,7 +10,7 @@ $(document).ready(function() {
 	var yellowCrystalValue = 0;
 	var greenCrystalValue = 0;
 
-	var roundOver = false;
+	//var roundOver = false;
 
 	/* things needed?
 
@@ -21,13 +21,13 @@ $(document).ready(function() {
 	*/
 
 	
-	//function to reset state @ beginning of round
+	/*function to reset state @ beginning of round
 	function initializeRound() {
 		roundScoreGoal = 0;
 		roundScoreCounter = 0;
 		roundOver = false;
 	}
-	
+	*/
 	//function to use Math.random() to pick number between 19-120 for roundScoreGoal
 	function getRandomScoreGoal(min, max) {
 		min = Math.ceil(19);
@@ -76,7 +76,9 @@ $(document).ready(function() {
 	$("#greenCrystalImage").attr("crystalPointsValue", greenCrystalValue);
 	
 	/*
-	function to keep track of roundScoreCounter and check roundScoreCounter to see if round won
+	function to keep track of crystal clicks,
+	increment roundScoreCounter,
+	and check roundScoreCounter against roundScoreGoal to see if round won
 	*/
 
 	$(".crystalImage").on("click", function crystalClickActions() {
@@ -92,18 +94,23 @@ $(document).ready(function() {
 		if(roundScoreCounter === roundScoreGoal) {
 			winsCounter++;
 			$("#winsCounterDisplay").text("Wins: " + winsCounter);
-			roundOver = true;
+		//	roundOver = true;
 		}
 		else if(roundScoreCounter > roundScoreGoal) {
 			lossesCounter++;
 			$("#lossesCounterDisplay").text("Losses: " + lossesCounter);
-			roundOver= true;
+		//	roundOver= true;
 		}
-
+		/*
 		if(roundOver = true) {
-			initializeRound();
+			roundScoreCounter = 0;
+			getRandomScoreGoal();
+			getRandomRedCrystalValue();
+			getRandomBlueCrystalValue();
+			getRandomYellowCrystalValue();
+			getRandomGreenCrystalValue();
 		}
-
+		*/
 	});
 	
 });
