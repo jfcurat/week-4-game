@@ -90,7 +90,7 @@ $(document).ready(function() {
 	$(".crystalImage").on("click", function crystalClickActions() {
 		var crystalPoints = ($(this).attr("crystalPointsValue"));
 		console.log(crystalPoints);
-
+		crystalPoints = parseInt(crystalPoints);
 		roundScoreCounter += crystalPoints;
 		console.log(roundScoreCounter);
 		$("#roundScoreCounterDisplay").text(roundScoreCounter);
