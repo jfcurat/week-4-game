@@ -36,6 +36,8 @@ $(document).ready(function() {
 	}
 	console.log(getRandomScoreGoal());
 
+	$("#roundScoreGoalDisplay").text("Score Goal: " + roundScoreGoal);
+
 	//functions to use Math.random() to pick numbers between 1-12 for red/blue/yellow/greenCrystalValue
 	function getRandomRedCrystalValue(min, max) {
 		min = Math.ceil(1);
